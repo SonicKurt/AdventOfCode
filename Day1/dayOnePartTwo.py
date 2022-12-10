@@ -72,7 +72,6 @@ for line in lines:
                 top_elves.append(elf_three)
 
             sum = 0
-            continue
             
 total_elves_calories = 0
 for i in range(TOP_ELVES_COUNTER):
