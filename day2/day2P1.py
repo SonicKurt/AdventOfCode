@@ -21,12 +21,14 @@ player_2_dict = {
     "Z" : SCISSORS
 }
 
+# Decode each of the players input.
 def decodePlayerInput(input, player_id):
     if not player_id:
         return player_1_dict[input]
     else:
         return player_2_dict[input]
 
+# Play the game of RPS.
 def playGame(player_1, player_2):
     if player_1 == player_2:
         return DRAW + 1
@@ -49,10 +51,14 @@ player_2_score = 0
 
 for line in lines:
     players_input = line.split(" ")
+    
+    # Decode each of the player's input.
     player_1 = decodePlayerInput(players_input[0].strip(), 0)
     player_2 = decodePlayerInput(players_input[1].strip(), 1)
 
+    # Play the game of Rock, Paper, Scissors.
     result = playGame(player_1, player_2)
+    
     if result == DRAW + 1:
         player_1_score += player_1 + DRAW
         player_2_score += player_2 + DRAW
