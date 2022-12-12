@@ -21,12 +21,14 @@ player_2_dict = {
     "Z" : WIN
 }
 
+# Decodes each player's input to be RPS.
 def decodePlayerInput(input, player_id):
     if not player_id:
         return player_1_dict[input]
     else:
         return player_2_dict[input]
 
+# Decodes our player's input to be the status of the game.
 def decodeResultStatus(player_2):
     if player_2 == DRAW:
         player_2 = player_1
@@ -47,6 +49,7 @@ def decodeResultStatus(player_2):
 
     return player_2
 
+# Play the game of Rock Paper Scissors.
 def playGame(player_1, player_2):
     if player_1 == player_2:
         return DRAW + 1
@@ -69,11 +72,17 @@ player_2_score = 0
 
 for line in lines:
     players_input = line.split(" ")
+
+    # Decodes each input.    
     player_1 = decodePlayerInput(players_input[0].strip(), 0)
     player_2 = decodePlayerInput(players_input[1].strip(), 1)
 
+    # Decodes our player to be the status of the game.
     player_2 = decodeResultStatus(player_2)
+    
+    # Play the game.
     result = playGame(player_1, player_2)
+
     if result == DRAW + 1:
         player_1_score += player_1 + DRAW
         player_2_score += player_2 + DRAW
