@@ -42,3 +42,5 @@ for i in range(TOP_ELVES_COUNTER):
     total_elves_calories += top_elves.pop(0)
 
 print("Top Three Elves Total: " + str(total_elves_calories))
+
+input.close()

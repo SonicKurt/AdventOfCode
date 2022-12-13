@@ -16,3 +16,5 @@ for line in lines:
         sum = 0
 
 print("Fatest Elf: " + str(fat_elf))
+
+input.close()

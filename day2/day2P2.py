@@ -95,3 +95,5 @@ for line in lines:
 
 
 print("My Score: " + str(player_2_score))
+
+input.close()
