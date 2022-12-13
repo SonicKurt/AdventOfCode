@@ -44,3 +44,5 @@ for i in range(len(common_compartments)):
     sum += common_compartments.pop(0)
 
 print("Sum: " + str(sum))
+
+input.close()
